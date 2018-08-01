@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Analysis</title>
+  <meta charset="utf-8">
+    {% load static %}
+	  <link rel="stylesheet" type="text/css" href="{% static 'css/index1.css' %}">
+	  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.min.css"/>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+	  <style type="text/css">
+table {
+	
+  width:95%;
+    table-layout: fixed;
+  float: right;
+      
+
+}
+.one
+{
+	
+	float: left;
+	width: 3%;
+
+}
+.one ul
+{
+	list-style-type: none;
+	text-align: center;
+}
+
+
+.tbl-content{
+  height:40vw;
+  position: absolute;
+  top: 26%;
+  overflow-x:auto;
+  margin-top: 0%;
+  float: right;
+  border: 1px solid rgba(255,255,255,0.3);
+}
+
+
+th {
+background-color:#32CD32;
+  padding: 1%;
+  text-align:center;
+
+ 
+  color: #ffffff;
+  
+
+}
+tr
+{
+	 opacity: 0.8;
+	 background-color: #f2f2f2;
+
+}
+td:nth-child(odd){
+	background-color: #ffffff;
+}
+ tr:hover
+ {
+  opacity: 1;
+ }
+
+td {
+font-family: Arial, Helvetica, sans-serif;
+font-size: 0.7vw;
+  padding: 1%;
+     
+   
+    text-align:center;
+
+}
+::-webkit-scrollbar {
+    width: 6px;
+} 
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+} 
+::-webkit-scrollbar-thumb {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+}
+
+
+</style>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script type="text/javascript">
+  
+
+  // '.tbl-content' consumed little space for vertical scrollbar, scrollbar width depend on browser/os/platfrom. Here calculate the scollbar width .
+$(window).on("load resize ", function() {
+  var scrollWidth = $('.tbl-content').width() - $('.tbl-content table').width();
+  $('.tbl-header').css({'padding-right':scrollWidth});
+}).resize();
+</script>
+
+</head>
+<body>
+<header>
+	
+	<img src="{% static 'images/logo1.png' %}">
+	<center>
+	<h1>VAAGDEVI COLLEGE OF ENGINEERING</h1>
+	<h2>(Autonomous)</h2>
+	<h4>Approved by AICTE & perminent Affiliation to JNTUH</h4>
+	<h3>Bollikunta Warangal-5006005(Telangana State)</h3>
+	</center>
+<div class="line"></div>
+</header>
+<table>
+  {% for record in records %}
+      <tr>
+          <td>{{ record.hall_ticket_number }}</td>
+          <td>{{ record.batch_id }}</td>
+          <td>{{ record.section_id }}</td>
+          <td>{{ record.department }}</td>
+          <td>{{ record.m1_points }}</td>
+          <td>{{ record.m1_grade }}</td>
+          <td>{{ record.applied_physics_points }}</td>
+          <td>{{ record.applied_physics_grade }}</td>
+          <td>{{ record.english_points }}</td>
+          <td>{{ record.english_grade }}</td>
+          <td>{{ record.engineering_graphics_points }}</td>
+          <td>{{ record.engineering_graphics_grade }}</td>
+          <td>{{ record.problem_solving_and_computer_points }}</td>
+          <td>{{ record.problem_solving_and_computer_grade }}</td>
+          <td>{{ record.applied_physics_lab_points }}</td>
+          <td>{{ record.applied_physics_lab_grade }}</td>
+          <td>{{ record.problem_solving_and_computer_prog_points }}</td>
+          <td>{{ record.problem_solving_and_computer_prog_grade }}</td>
+          <td>{{ record.inFormation_technology_workshop_points }}</td>
+          <td>{{ record.inFormation_technology_workshop_grade }}</td>
+      </tr>
+      {% endfor %}
+  </table>
+
+</body>
+</html>

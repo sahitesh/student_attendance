@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+    <head>
+    </head>
+    <body>
+        <table>
+        {% for record in records %}
+            <tr>
+                <td>{{ record.hall_ticket_number }}</td>
+                <td>{{ record.batch_id }}</td>
+                <td>{{ record.section_id }}</td>
+                <td>{{ record.department }}</td>
+                <td>{{ record.m1_points }}</td>
+                <td>{{ record.m1_grade }}</td>
+                <td>{{ record.applied_physics_points }}</td>
+                <td>{{ record.applied_physics_grade }}</td>
+                <td>{{ record.english_points }}</td>
+                <td>{{ record.english_grade }}</td>
+                <td>{{ record.engineering_graphics_points }}</td>
+                <td>{{ record.engineering_graphics_grade }}</td>
+                <td>{{ record.problem_solving_and_computer_points }}</td>
+                <td>{{ record.problem_solving_and_computer_grade }}</td>
+                <td>{{ record.applied_physics_lab_points }}</td>
+                <td>{{ record.applied_physics_lab_grade }}</td>
+                <td>{{ record.problem_solving_and_computer_prog_points }}</td>
+                <td>{{ record.problem_solving_and_computer_prog_grade }}</td>
+                <td>{{ record.inFormation_technology_workshop_points }}</td>
+                <td>{{ record.inFormation_technology_workshop_grade }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </body>
+</html>
