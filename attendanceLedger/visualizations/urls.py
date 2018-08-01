@@ -1,7 +1,9 @@
-from django.urls import path
+from django.conf.urls import url
 
-from . import views
+from .views import Home, GetTable
 
 urlpatterns = [
-    path('', views.index, name='index'),
+    url('', Home.as_view(), name = 'homepage'),
+    url('tables', GetTable.as_view(), name = 'tables')
+    
 ]
