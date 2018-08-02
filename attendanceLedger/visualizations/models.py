@@ -3,6 +3,9 @@ from django.db import models
 # Create your models here.
 class FirstYearStudent(models.Model):
     hall_ticket_number = models.CharField(max_length = 12, primary_key=True)
+    batch_id   = models.IntegerField(default = 0)
+    section_id = models.CharField(max_length = 5)
+    department = models.CharField(max_length = 5)
     m1_points = models.IntegerField(default = 0)
     m1_grade = models.CharField(max_length = 5)
     applied_physics_points = models.IntegerField(default = 0)
@@ -19,9 +22,6 @@ class FirstYearStudent(models.Model):
     problem_solving_and_computer_prog_grade = models.CharField(max_length = 5)
     inFormation_technology_workshop_points = models.IntegerField(default = 0)
     inFormation_technology_workshop_grade = models.CharField(max_length = 5)
-    batch_id   = models.IntegerField(default = 0)
-    section_id = models.CharField(max_length = 5)
-    department = models.CharField(max_length = 5)
 
     class Meta:
         db_table = 'firstyearsemester1_1718'

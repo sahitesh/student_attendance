@@ -6,7 +6,9 @@ from .models import FirstYearStudent
 
 class Home(APIView):
     def get(self, request):
-        return render(request, 'index.html', {'records': FirstYearStudent.objects.all()})
+        header = [a.name for a in FirstYearStudent._meta.get_fields()]
+        header = [a.replace('_',' ').title() for a in header]
+        return render(request, 'home.html', {'records': FirstYearStudent.objects.all(), 'header':header})
 
 class GetTable(APIView):
     def get(self, request):
