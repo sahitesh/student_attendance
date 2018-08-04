@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>VAP</title>
+  <meta charset="utf-8">
+    {% load static %}
+    {% load bootstrap3 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+    {% bootstrap_messages %}
+    <link rel="shortcut icon" href="{% static 'images/icon.ico' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}">
+    <script type="text/javascript" src="{% static 'js/jquery-3.3.1.min.js' %}" charset="UTF-8"></script>
+    <script type="text/javascript" src="{% static 'js/bootstrap.js' %}" charset="UTF-8"></script>
+
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <a class="navbar-brand" href="#">VAAGDEVI ANALYSIS PLATFORM</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarColor01">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Visualisations</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Story</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contact Us</a>
+            </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="text" placeholder="Search">
+            <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+          </form>
+        </div>
+      </nav>
+
+    <div class="jumbotron">
+        <h1 class="display-3">Third Year Semester I Results</h1>
+        <p class="lead">Class Performance and Section Performance Statistics are shown below</p>
+        <ul class="nav nav-pills">
+            <li class="nav-item">
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Year</a>
+                <div class="dropdown-menu" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 38px, 0px);">
+                    <a class="dropdown-item" href="first">First Year</a>
+                    <a class="dropdown-item" href="second">Second Year</a>
+                    <a class="dropdown-item" href="third">Third Year</a>
+                </div>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Section</a>
+                <div class="dropdown-menu" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 38px, 0px);">
+                <a class="dropdown-item" href="#">A</a>
+                <a class="dropdown-item" href="#">B</a>
+                <a class="dropdown-item" href="#">C</a>
+                <a class="dropdown-item" href="#">C</a>
+                <a class="dropdown-item" href="#">All</a>
+                </div>
+            </li>
+            </ul>
+        <table class="table table-hover">
+            <tr class="table-primary">
+            {% for column in third_header %}
+                <th scope = "col" >{{column}}</th>
+                {% endfor %}
+            </tr>
+            {% for record in thirdYear %}
+            <tr>
+                <td>{{ record.hall_ticket_number }}</td>
+                <td>{{ record.batch_id }}</td>
+                <td>{{ record.section_id }}</td>
+                <td>{{ record.department }}</td>
+                <td>{{ record.adbms_points }}</td>
+                <td>{{ record.adbms_grade }}</td>
+                <td>{{ record.cd_points }}</td>
+                <td>{{ record.cd_grade }}</td>
+                <td>{{ record.cncdlab_points }}</td>
+                <td>{{ record.cncdlab_grade }}</td>
+                <td>{{ record.dccn_points }}</td>
+                <td>{{ record.dccn_grade }}</td>
+                <td>{{ record.dm_points }}</td>
+                <td>{{ record.dm_grade }}</td>
+                <td>{{ record.dmlab_points }}</td>
+                <td>{{ record.dmlab_grade }}</td>
+                <td>{{ record.dwdm_points }}</td>
+                <td>{{ record.dwdm_grade }}</td>
+                <td>{{ record.hpve_points }}</td>
+                <td>{{ record.hpve_grade }}</td>
+                <td>{{ record.ipr_points }}</td>
+                <td>{{ record.ipr_grade }}</td>
+                <td>{{ record.ooad_points }}</td>
+                <td>{{ record.ooad_grade }}</td>
+                <td>{{ record.se_points }}</td>
+                <td>{{ record.se_grade }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+
+</body>
+</html>
