@@ -9,7 +9,9 @@
     {% bootstrap_javascript %}
     {% bootstrap_messages %}
     <link rel="shortcut icon" href="{% static 'images/icon.ico' %}" />
-	  <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}">
+    <script type="text/javascript" src="{% static 'js/bootstrap.js' %}" charset="UTF-8"></script>
+    <script type="text/javascript" src="{% static 'js/jquery-3.3.1.min.js' %}" charset="UTF-8"></script>
 
 </head>
 <body>
@@ -41,47 +43,62 @@
           </form>
         </div>
       </nav>
-<!-- <header>
-	
-	<img src="{% static 'images/logo1.png' %}">
-	<center>
-	<h1>VAAGDEVI COLLEGE OF ENGINEERING</h1>
-	<h2>(Autonomous)</h2>
-	<h4>Approved by AICTE & perminent Affiliation to JNTUH</h4>
-	<h3>Bollikunta Warangal-5006005(Telangana State)</h3>
-	</center>
-<div class="line"></div>
-</header> -->
-<table class="table table-hover">
-      <tr class="table-primary">
-        {% for column in header %}
-          <th scope = "col" >{{column}}</th>
-          {% endfor %}
-      </tr>
-  {% for record in records %}
-      <tr>
-          <td>{{ record.hall_ticket_number }}</td>
-          <td>{{ record.batch_id }}</td>
-          <td>{{ record.section_id }}</td>
-          <td>{{ record.department }}</td>
-          <td>{{ record.m1_points }}</td>
-          <td>{{ record.m1_grade }}</td>
-          <td>{{ record.applied_physics_points }}</td>
-          <td>{{ record.applied_physics_grade }}</td>
-          <td>{{ record.english_points }}</td>
-          <td>{{ record.english_grade }}</td>
-          <td>{{ record.engineering_graphics_points }}</td>
-          <td>{{ record.engineering_graphics_grade }}</td>
-          <td>{{ record.problem_solving_and_computer_points }}</td>
-          <td>{{ record.problem_solving_and_computer_grade }}</td>
-          <td>{{ record.applied_physics_lab_points }}</td>
-          <td>{{ record.applied_physics_lab_grade }}</td>
-          <td>{{ record.problem_solving_and_computer_prog_points }}</td>
-          <td>{{ record.problem_solving_and_computer_prog_grade }}</td>
-          <td>{{ record.inFormation_technology_workshop_points }}</td>
-          <td>{{ record.inFormation_technology_workshop_grade }}</td>
-      </tr>
-      {% endfor %}
-  </table>
+
+
+<div class="jumbotron">
+  <h1 class="display-3">First Year Semester I Results</h1>
+  <p class="lead">Class Performance and Section Performance Statistics are shown below</p>
+  <ul class="nav nav-pills">
+      <li class="nav-item">
+          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Year</a>
+          <div class="dropdown-menu" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 38px, 0px);">
+            <a class="dropdown-item" href="#">First Year</a>
+            <a class="dropdown-item" href="#">Second Year</a>
+            <a class="dropdown-item" href="#">Third Year</a>
+          </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Section</a>
+        <div class="dropdown-menu" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 38px, 0px);">
+          <a class="dropdown-item" href="#">A</a>
+          <a class="dropdown-item" href="#">B</a>
+          <a class="dropdown-item" href="#">C</a>
+          <a class="dropdown-item" href="#">C</a>
+          <a class="dropdown-item" href="#">All</a>
+        </div>
+      </li>
+    </ul>
+  <table class="table table-hover">
+    <tr class="table-primary">
+      {% for column in header %}
+        <th scope = "col" >{{column}}</th>
+        {% endfor %}
+    </tr>
+{% for record in records %}
+    <tr>
+        <td>{{ record.hall_ticket_number }}</td>
+        <td>{{ record.batch_id }}</td>
+        <td>{{ record.section_id }}</td>
+        <td>{{ record.department }}</td>
+        <td>{{ record.m1_points }}</td>
+        <td>{{ record.m1_grade }}</td>
+        <td>{{ record.applied_physics_points }}</td>
+        <td>{{ record.applied_physics_grade }}</td>
+        <td>{{ record.english_points }}</td>
+        <td>{{ record.english_grade }}</td>
+        <td>{{ record.engineering_graphics_points }}</td>
+        <td>{{ record.engineering_graphics_grade }}</td>
+        <td>{{ record.problem_solving_and_computer_points }}</td>
+        <td>{{ record.problem_solving_and_computer_grade }}</td>
+        <td>{{ record.applied_physics_lab_points }}</td>
+        <td>{{ record.applied_physics_lab_grade }}</td>
+        <td>{{ record.problem_solving_and_computer_prog_points }}</td>
+        <td>{{ record.problem_solving_and_computer_prog_grade }}</td>
+        <td>{{ record.inFormation_technology_workshop_points }}</td>
+        <td>{{ record.inFormation_technology_workshop_grade }}</td>
+    </tr>
+    {% endfor %}
+</table>
+</div>
 </body>
 </html>
