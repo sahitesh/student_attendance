@@ -70,11 +70,11 @@
     </ul>
   <table class="table table-hover">
     <tr class="table-primary">
-      {% for column in header %}
+      {% for column in first_header %}
         <th scope = "col" >{{column}}</th>
         {% endfor %}
     </tr>
-{% for record in records %}
+{% for record in firstYear %}
     <tr>
         <td>{{ record.hall_ticket_number }}</td>
         <td>{{ record.batch_id }}</td>
@@ -100,5 +100,127 @@
     {% endfor %}
 </table>
 </div>
+
+<div class="jumbotron">
+  <h1 class="display-3">Second Year Semester I Results</h1>
+  <p class="lead">Class Performance and Section Performance Statistics are shown below</p>
+  <ul class="nav nav-pills">
+      <li class="nav-item">
+          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Year</a>
+          <div class="dropdown-menu" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 38px, 0px);">
+            <a class="dropdown-item" href="#">First Year</a>
+            <a class="dropdown-item" href="#">Second Year</a>
+            <a class="dropdown-item" href="#">Third Year</a>
+          </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Section</a>
+        <div class="dropdown-menu" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 38px, 0px);">
+          <a class="dropdown-item" href="#">A</a>
+          <a class="dropdown-item" href="#">B</a>
+          <a class="dropdown-item" href="#">C</a>
+          <a class="dropdown-item" href="#">C</a>
+          <a class="dropdown-item" href="#">All</a>
+        </div>
+      </li>
+    </ul>
+  <table class="table table-hover">
+    <tr class="table-primary">
+      {% for column in second_header %}
+        <th scope = "col" >{{column}}</th>
+        {% endfor %}
+    </tr>
+{% for record in secondYear %}
+    <tr>
+        <td>{{ record.hall_ticket_number }}</td>
+        <td>{{ record.batch_id }}</td>
+        <td>{{ record.section_id }}</td>
+        <td>{{ record.department }}</td>
+        <td>{{ record.coa_points }}</td>
+        <td>{{ record.coa_grade }}</td>
+        <td>{{ record.dbms_points }}</td>
+        <td>{{ record.dbms_grade }}</td>
+        <td>{{ record.dbmslab_points }}</td>
+        <td>{{ record.dbmslab_grade }}</td>
+        <td>{{ record.dld_mp_points }}</td>
+        <td>{{ record.dld_mp_grade }}</td>
+        <td>{{ record.dldmplab_points }}</td>
+        <td>{{ record.dldmplab_grade }}</td>
+        <td>{{ record.es_points }}</td>
+        <td>{{ record.es_grade }}</td>
+        <td>{{ record.mfcs_points }}</td>
+        <td>{{ record.mfcs_grade }}</td>
+        <td>{{ record.oopjava_points }}</td>
+        <td>{{ record.oopjava_grade }}</td>
+        <td>{{ record.oopjavalab_points }}</td>
+        <td>{{ record.oopjavalab_grade }}</td>
+    </tr>
+    {% endfor %}
+</table>
+</div>
+
+<div class="jumbotron">
+  <h1 class="display-3">Third Year Semester I Results</h1>
+  <p class="lead">Class Performance and Section Performance Statistics are shown below</p>
+  <ul class="nav nav-pills">
+      <li class="nav-item">
+          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Year</a>
+          <div class="dropdown-menu" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 38px, 0px);">
+            <a class="dropdown-item" href="#">First Year</a>
+            <a class="dropdown-item" href="#">Second Year</a>
+            <a class="dropdown-item" href="#">Third Year</a>
+          </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Section</a>
+        <div class="dropdown-menu" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 38px, 0px);">
+          <a class="dropdown-item" href="#">A</a>
+          <a class="dropdown-item" href="#">B</a>
+          <a class="dropdown-item" href="#">C</a>
+          <a class="dropdown-item" href="#">C</a>
+          <a class="dropdown-item" href="#">All</a>
+        </div>
+      </li>
+    </ul>
+  <table class="table table-hover">
+    <tr class="table-primary">
+      {% for column in third_header %}
+        <th scope = "col" >{{column}}</th>
+        {% endfor %}
+    </tr>
+{% for record in thirdYear %}
+    <tr>
+        <td>{{ record.hall_ticket_number }}</td>
+        <td>{{ record.batch_id }}</td>
+        <td>{{ record.section_id }}</td>
+        <td>{{ record.department }}</td>
+        <td>{{ record.adbms_points }}</td>
+        <td>{{ record.adbms_grade }}</td>
+        <td>{{ record.cd_points }}</td>
+        <td>{{ record.cd_grade }}</td>
+        <td>{{ record.cncdlab_points }}</td>
+        <td>{{ record.cncdlab_grade }}</td>
+        <td>{{ record.dccn_points }}</td>
+        <td>{{ record.dccn_grade }}</td>
+        <td>{{ record.dm_points }}</td>
+        <td>{{ record.dm_grade }}</td>
+        <td>{{ record.dmlab_points }}</td>
+        <td>{{ record.dmlab_grade }}</td>
+        <td>{{ record.dwdm_points }}</td>
+        <td>{{ record.dwdm_grade }}</td>
+        <td>{{ record.hpve_points }}</td>
+        <td>{{ record.hpve_grade }}</td>
+        <td>{{ record.ipr_points }}</td>
+        <td>{{ record.ipr_grade }}</td>
+        <td>{{ record.ooad_points }}</td>
+        <td>{{ record.ooad_grade }}</td>
+        <td>{{ record.se_points }}</td>
+        <td>{{ record.se_grade }}</td>
+    </tr>
+    {% endfor %}
+</table>
+</div>
+
+
 </body>
 </html>
