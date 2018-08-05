@@ -1952,15 +1952,39 @@ pre code {
 }
 
 .table-responsive {
+  table-layout: fixed;
   display: block;
   width: 100%;
   overflow-x: auto;
+  max-height: 350px;
   -webkit-overflow-scrolling: touch;
   -ms-overflow-style: -ms-autohiding-scrollbar;
 }
 
+.table-responsive > .th {
+  position: fixed;
+}
 .table-responsive > .table-bordered {
   border: 0;
+}
+
+.table-fixed > tbody {
+    display:block;
+    height:300px;
+    overflow:auto;
+    word-wrap: normal;
+    white-space: normal;
+}
+
+.table-fixed thead, tbody, tr {
+  display:table;
+  width:100%;
+  table-layout:fixed;
+  word-wrap: normal;
+}
+
+.table-fixed > thead > tr {
+  width:98.7%;
 }
 
 .form-control {

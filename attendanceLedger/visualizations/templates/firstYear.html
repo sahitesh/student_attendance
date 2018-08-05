@@ -52,9 +52,9 @@
       <li class="nav-item">
           <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Year</a>
           <div class="dropdown-menu" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 38px, 0px);">
-            <a class="dropdown-item" href="first">First Year</a>
-            <a class="dropdown-item" href="second">Second Year</a>
-            <a class="dropdown-item" href="third">Third Year</a>
+            <a class="dropdown-item" href="{ % url 'first' %}">First Year</a>
+            <a class="dropdown-item" href="{ % url 'second' %}">Second Year</a>
+            <a class="dropdown-item" href="{ % url 'third' %}">Third Year</a>
           </div>
       </li>
       <li class="nav-item dropdown">
@@ -63,17 +63,20 @@
           <a class="dropdown-item" href="#">A</a>
           <a class="dropdown-item" href="#">B</a>
           <a class="dropdown-item" href="#">C</a>
-          <a class="dropdown-item" href="#">C</a>
+          <a class="dropdown-item" href="#">D</a>
           <a class="dropdown-item" href="#">All</a>
         </div>
       </li>
     </ul>
-  <table class="table table-hover">
+  <table class="table table-hover table-bordered table-striped table-sm table-fixed">
+    <thead>
     <tr class="table-primary">
       {% for column in first_header %}
         <th scope = "col" >{{column}}</th>
         {% endfor %}
     </tr>
+  </thead>
+  <tbody>
 {% for record in firstYear %}
     <tr>
         <td>{{ record.hall_ticket_number }}</td>
@@ -98,6 +101,7 @@
         <td>{{ record.inFormation_technology_workshop_grade }}</td>
     </tr>
     {% endfor %}
+  </tbody>
 </table>
 </div>
 
