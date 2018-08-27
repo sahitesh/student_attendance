@@ -62,24 +62,41 @@ class ThirdYearStudent(models.Model):
     adbms_grade = models.CharField(max_length = 5)
     cd_points = models.IntegerField(default = 0)
     cd_grade = models.CharField(max_length = 5)
+    cd_attendance = models.IntegerField()
     cncdlab_points = models.IntegerField(default = 0)
     cncdlab_grade = models.CharField(max_length = 5)
+    cncdlab_attendance = models.IntegerField()
     dccn_points = models.IntegerField(default = 0)
     dccn_grade = models.CharField(max_length = 5)
+    dccn_attendance = models.IntegerField()
     dm_points = models.IntegerField(default = 0)
     dm_grade = models.CharField(max_length = 5)
     dmlab_points = models.IntegerField(default = 0)
     dmlab_grade = models.CharField(max_length = 5)
+    dmlab_attendance = models.IntegerField()
     dwdm_points = models.IntegerField(default = 0)
     dwdm_grade = models.CharField(max_length = 5)
-    hpve_points = models.IntegerField(default = 0)
-    hpve_grade = models.CharField(max_length = 5)
+    dwdm_attendance = models.IntegerField()
+    hvpe_points = models.IntegerField(default = 0)
+    hvpe_grade = models.CharField(max_length = 5)
+    hvpe_attendance = models.IntegerField()
     ipr_points = models.IntegerField(default = 0)
     ipr_grade = models.CharField(max_length = 5)
     ooad_points = models.IntegerField(default = 0)
     ooad_grade = models.CharField(max_length = 5)
+    ooad_attendance = models.IntegerField()
     se_points = models.IntegerField(default = 0)
     se_grade = models.CharField(max_length = 5)
+    se_attendance = models.IntegerField()
     
     class Meta:
         db_table = 'thirdyearsemester1_1718'
+
+class SampleStatistics(models.Model):
+    subject_id = models.CharField(max_length = 20)
+    section_id = models.CharField(max_length = 5)
+    department = models.CharField(max_length = 5)
+    total_classes = models.IntegerField()
+
+    class Meta:
+        db_table = 'maxclasses_metadata'

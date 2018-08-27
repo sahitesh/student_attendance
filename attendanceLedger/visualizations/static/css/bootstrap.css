@@ -1954,7 +1954,7 @@ pre code {
 .table-responsive {
   table-layout: fixed;
   display: block;
-  width: 100%;
+  width: 10%;
   overflow-x: auto;
   max-height: 350px;
   -webkit-overflow-scrolling: touch;
@@ -1974,6 +1974,7 @@ pre code {
     overflow:auto;
     word-wrap: normal;
     white-space: normal;
+    text-align: center;
 }
 
 .table-fixed thead, tbody, tr {
